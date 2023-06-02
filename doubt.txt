@@ -1,0 +1,104 @@
+For display credits
+---------------------
+Your collective credits = ?
+Credit= ?
+Debit = ?
+Balance = a_balancepoints
+
+
+
+
+in Add To account
+-------------------
+Which API to send the data 
+Gift card Number = ?
+Gift card Pin = ? 
+
+
+
+{
+    "success": true,
+    "results": [
+        {
+            "shopId": 26,
+            "balanceCredits": [
+                {
+                    "balance": 50000
+                }
+            ],
+            "earnedCredits": [
+                {
+                    "a_orderid": 7533468,
+                    "orderNo": "SA7533468",
+                    "a_code": "abc",
+                    "a_points": "50000.00",
+                    "a_rmaid": "50000.00",
+                    "a_balancepoints": "50000.00",
+                    "a_addeddate": "2022-06-08T07:53:00.000Z",
+                    "a_comments": "abc",
+                    "a_type": "Credit",
+                    "product_name": "Ecru Tilla Embroidered Pashmina Shawl-Color : Off White_Cream, Size : NA",
+                    "item_count": 1,
+                    "a_shopid": 26,
+                    "status": "Online",
+                    "product": {
+                        "productId": "39565761",
+                        "productAttributeId": "3593617",
+                        "name": "Ecru Tilla Embroidered Pashmina Shawl",
+                        "color": "Off White_Cream",
+                        "sizes": "NA",
+                        "media": {
+                            "Extension": "jpg",
+                            "360Image": "0",
+                            "Position": "1",
+                            "ID": "5899201",
+                            "SFO": "1",
+                            "Name": "39565761-5899201"
+                        }
+                    }
+                },
+                {
+                    "a_orderid": 7533468,
+                    "orderNo": "SA7533468",
+                    "a_code": "abc",
+                    "a_points": "11.00",
+                    "a_rmaid": "",
+                    "a_balancepoints": "0.00",
+                    "a_addeddate": "2022-06-08T07:50:30.000Z",
+                    "a_comments": "Redeemed",
+                    "a_type": "Debit",
+                    "product_name": "",
+                    "item_count": 1,
+                    "a_shopid": 26,
+                    "status": "Online",
+                    "product": {
+                        "productId": "39565761",
+                        "productAttributeId": "3593617",
+                        "name": "Ecru Tilla Embroidered Pashmina Shawl",
+                        "color": "Off White_Cream",
+                        "sizes": "NA",
+                        "media": {
+                            "Extension": "jpg",
+                            "360Image": "0",
+                            "Position": "1",
+                            "ID": "5899201",
+                            "SFO": "1",
+                            "Name": "39565761-5899201"
+                        }
+                    }
+                }
+            ],
+            "redeemedCredits": []
+        }
+    ],
+    "resultCount": 2,
+    "msg": "",
+    "cache": 0,
+    "ttl": 10,
+    "hash": "d2e8cc43d1c8a965d8368d93fbbc00e3.b837099bf07326b711e52fcf37625921"
+}
+
+
+
+
+
