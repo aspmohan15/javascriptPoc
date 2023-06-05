@@ -1,0 +1,350 @@
+@import "../../base/color";
+@import "../../base/mixin";
+@import "../../base/fonts";
+
+.CircularCardListContainer {
+    .sectionHeader {
+        @include fonts(28px, $gotham, 700, 1.25, normal);
+        text-align: center;
+        color: #0e3051;
+        text-transform:uppercase;
+        padding-bottom: 20px;
+    }
+    :global {
+        .swiper-slide{
+            @include for-mobile{
+                margin-top: 0!important;
+            }
+        } 
+    }
+    
+
+    .cardContainer {
+        position: relative;
+
+        .MuiGrid-item {
+            padding-left: 20px;
+        }
+        img {
+            border-radius: 100%;
+        }
+    }
+    &.AS {
+        margin-left: 263px;
+        margin-right: 263px;
+        @media (max-width: 1600px) {
+            margin-left: 213px;
+            margin-right: 213px;
+          }
+        
+          @media (max-width: 1300px) {
+            margin-left: 150px;
+            margin-right: 150px;
+          }
+        
+          @media (max-width: 1100px) {
+            margin-left: 120px;
+            margin-right: 120px;
+          }
+        .title {
+            @include fonts(14px, $cabin, 700, 1.43, normal);
+            color: $white;
+            position: absolute;
+            transform: translate(-50%, 0);
+            text-align: center;
+            left: 50%;
+            bottom: 10px;
+        }
+        .cardContainer {
+            padding-bottom: 3px;
+            padding-right: 0;
+        }
+    }
+    &.L2PLP {
+        padding-bottom: 40px;
+        @include for-mobile() {
+          margin: 0 20px;
+          padding-bottom: 0;
+        }
+    }
+}
+.AS {
+    :global {
+        .swiper-slide{
+            margin-top: 0!important;
+            margin-bottom: 27px;
+        } 
+    }
+}
+.AEO {
+    .sectionHeader{
+        @include fonts(35px, $avenirnext, 800, 1.25, normal);
+        text-transform: uppercase;
+        color: $navyblue;
+        @include for-mobile {   
+            @include fonts(21px, $avenirnext, 800, 1.25, normal);
+        }
+    }
+    .title{
+        @include fonts(21px, $avenirnext, 700, 1.25, normal);
+        color: $navyblue;
+        text-transform: capitalize;
+        margin-top: 8px;
+        text-align: center;
+        @include for-mobile {   
+            @include fonts(16px, $avenirnext, 700, 1.25, normal);
+        }
+    }
+    @include for-mobile {   
+        :global {
+            .swiper-slide{
+                margin-top: 0 !important;
+                width: 44% !important;
+                display: inline-block;
+            } 
+            .swiper {
+                .swiper-wrapper {
+                    flex-wrap: nowrap;
+                    width: 100% !important;
+                    display: block;
+                    text-align: CENTER;
+                }    
+            }    
+        }
+    }
+}
+
+.PE {
+
+    :global{
+        .swiper-slide{
+            margin-top: 0!important;
+            margin-bottom: 27px;
+        }
+    }
+
+        @include for-mobile {   
+            :global {
+                .swiper {
+                    .swiper-wrapper {
+                        flex-direction: row;
+                    }    
+                }    
+                .swiper-pagination {
+                    bottom: -5px !important;    
+                    .swiper-pagination-bullet-active {
+                        height: 5px;
+                        width: 40px;
+                        border-radius: 2.5px;
+                        background-image: linear-gradient(263deg, #0b8f4c 100%,$darkspringgreen);
+                       
+                    }
+                    span{
+                        height: 5px;
+                        width: 16px;
+                        border-radius: 2.5px;
+                    }
+                   
+                }
+            }
+        }
+
+
+    .sectionHeader {
+        @include fonts(21px, $cabin, bold, 1.81, normal);
+
+        @include for-mobile() {
+            font-size: 16px;
+            line-height: 2.38;
+        }
+    }
+
+
+    .cardContainer {
+        .title {
+            @include fonts(14px, $lato, bold, 2.71, normal);
+            text-align: center;
+            left: 50%;
+            bottom: -48px;
+            color: $black;
+            width: fit-content;
+            margin: auto;
+            padding-top: 10px;
+
+            @include for-mobile() {
+                font-size: 12px;
+                line-height: normal;
+            }
+        }
+    }
+
+
+}
+.VH{
+    .sectionHeader{
+      font-family: $oswald;
+    }
+    .cardContainer {
+        .title {
+            
+            @include fonts(14px,$oswald);
+            @include for-mobile{
+                font-size:12px;
+            }
+    }
+}
+}
+.LP{
+    .sectionHeader{
+     font-family:$opensans;
+        
+    }
+    .cardContainer {
+        .title {
+            @include fonts(14px,$opensans);
+        @include for-mobile{
+            font-size:12px;
+        }
+        }
+    }
+}
+.category > div {
+    @include for-desktop() {
+        justify-content: center;
+    }
+}
+.L2PLP{
+    margin-bottom: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    padding-top: 40px;
+    @include for-mobile{
+        padding-top: 30px;
+        :global{
+            .swiper-wrapper{
+                flex-direction: row !important;
+            }
+            .swiper-slide{
+                @include for-mobile{
+                    margin-bottom: 30px;
+                    margin-right: 13px !important;
+                }
+            }
+        }
+    }
+    .sectionHeader{
+        font-size:21px;
+        color:$black;
+        @include for-mobile{
+            font-size:16px;
+            padding-bottom: 17px;
+        }
+    }
+    >div{
+        justify-content: center;
+    }
+    .title {
+        text-align: center;
+        padding-top: 25px;
+        font-weight: bold;
+        text-transform: uppercase;
+        left: 50%;
+        color: $black !important;
+        position: static !important;
+        bottom: 0 !important;
+        transform: initial !important;
+        @include for-mobile {
+            padding-top: 15px;
+        }
+    }
+    &.VH{
+        .sectionHeader, .title{
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+        .title{
+            padding-top: 18px;
+        }
+    }
+    &.LP{
+        .sectionHeader{
+            font-family: $kaisei;
+            text-transform: capitalize;
+        }
+    }
+    &.AS{
+        .sectionHeader{
+            text-transform: uppercase;
+        }
+    }
+    &.PE{
+        .sectionHeader{
+            text-transform: uppercase;
+        }
+    }
+}
+.circularImgFlex {
+    :global {
+       .mySwiper.swiper-grid-column .swiper-wrapper {
+            flex-wrap: nowrap;
+            margin: 0 auto;
+            justify-content: center;
+            flex-direction: row;
+        }
+    }
+  }
+
+  .renderMobileGrid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+      .cirularCardWrapper {
+          margin-right: 13px;
+          margin-bottom: 30px;
+          width: 25%;
+          &:nth-child(3n){
+              margin-right: 0;
+          }
+      }
+  }
+
+
+
+  .AEO {
+    .sectionHeader{
+        @include fonts(35px, $avenirnext, 800, 1.25, normal);
+        text-transform: uppercase;
+        color: $navyblue;
+        @include for-mobile {   
+            @include fonts(21px, $avenirnext, 800, 1.25, normal);
+        }
+    }
+    .title{
+        @include fonts(21px, $avenirnext, 700, 1.25, normal);
+        color: $navyblue;
+        text-transform: capitalize;
+        margin-top: 8px;
+        text-align: center;
+        @include for-mobile {   
+            @include fonts(16px, $avenirnext, 700, 1.25, normal);
+        }
+    }
+    @include for-mobile {   
+        :global {
+            .swiper-slide{
+                margin-top: 0 !important;
+                width: 44% !important;
+                display: inline-block;
+            } 
+            .swiper {
+                .swiper-wrapper {
+                    flex-wrap: nowrap;
+                    width: 100% !important;
+                    display: block;
+                    text-align: CENTER;
+                }    
+            }    
+        }
+    }
+}
