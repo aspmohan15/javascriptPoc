@@ -1,102 +1,61 @@
+<div className={`${styles.categoryCollectionContainer}  top-bottom-spacing ${isCarouselTypeThumbnail ? styles.categoryCollectionThumbnail : ''}`}>
+    <div className={styles.categoryCollectionsHeader}>
+        <Typography variant="h4" className={styles.headerText}>{title}</Typography>
+        <Typography variant="p" className={styles.headerDesc}>{contentText}</Typography>
+    </div>
+    <div className={styles.categoryCollectionContentBlk}>
+        {isCarouselTypeThumbnail ? <div className={styles.collectionThumbnailBlk}>
+            <a href="">
+                <ImageLoader
+                    src={props.isMobile ? mobileLImage : desktopLImage}
+                    layout="responsive"
+                    {...thumbnailImgDimension}
+                    alt={altLText}
+                    title={altLText}
+                />
+                <div className={styles.thumbnailTitleBlock}>
+                    <Typography variant="p" className={styles.thumbnailTitle}>{titleThumbnail}</Typography>
+                    <Button variant="filled" className={styles.ctaBTNthmbnail} >{ctaLabelThum}</Button>
+                </div>
+            </a>
+        </div>
+            : ''
+        }
+        <div className={`${styles.categoryCollectionsSliderBlk}`}>
+            <Swiper {...swiperProps} className={`exploreCollectionSlide`}>
+                {items.map((itemsData, index) => {
+                    return (
+                        <>
+                            <SwiperSlide>
+                                {blurLastImage && <div className={`${styles.blurImage} blurImg`}></div>}
+                                <a href={itemsData.targetLink} title={itemsData.altLText}>
+                                    <div className={`${styles.card_container}`}>
+                                        <ImageLoader
+                                            src={props.isMobile ? itemsData.mobileImage : itemsData.desktopImage}
+                                            layout="responsive"
+                                            {...ImageDimensions}
+                                            alt={itemsData.altLText}
+                                            title={itemsData.altLText}
+                                        />
+                                        {console.log(ImageDimensions, 'ImageDimensions')}
+                                        <div className={styles.card_TextBlk}>
+                                            <Typography className={styles.card_categoryName}>
+                                                {itemsData.title}
+                                            </Typography>
+                                            <Typography className={styles.card_categoryDesc}>
+                                                {itemsData.contentText}
+                                            </Typography>
+                                        </div>
+                                    </div>
+                                </a>
+                            </SwiperSlide>
+                        </>
+                    )
+                }
+                )}
+            </Swiper>
 
-let data = [
-    {
-        "swiper": {
-            "slider": [
-                {
-                    "tempTagCarousel": "mfl-superapp:aeo/lookbook/hcarousel1",
-                    "desktopLImage": "https://s7ap1.scene7.com/is/image/adityabirlafashionstage/vh_look-1_2x",
-                    "appLImage": "https://s7ap1.scene7.com/is/image/adityabirlafashionstage/vh_look-1_2x",
-                    "mobileLImage": "https://s7ap1.scene7.com/is/image/adityabirlafashionstage/vh_look-1_2x",
-                    "altLText": "home look1",
-                    "tags": "mfl-superapp:aeo/lookbook/homepage",
-                    "tagCarousel": "mfl-superapp:aeo/lookbook/hcarousel1"
-                },
-                {
-                    "tempTagCarousel": "mfl-superapp:aeo/lookbook/hcarousel1",
-                    "desktopLImage": "https://s7ap1.scene7.com/is/image/adityabirlafashionstage/vh_look-2_2x",
-                    "appLImage": "https://s7ap1.scene7.com/is/image/adityabirlafashionstage/vh_look-2_2x",
-                    "mobileLImage": "https://s7ap1.scene7.com/is/image/adityabirlafashionstage/vh_look-2_2x",
-                    "altLText": "homepage look2",
-                    "tags": "mfl-superapp:aeo/lookbook/homepage",
-                    "tagCarousel": "mfl-superapp:aeo/lookbook/hcarousel1"
-                }
-            ],
-            "desktopLImage": "https://s7ap1.scene7.com/is/image/adityabirlafashionstage/AE_look_4_2x",
-            "appLImage": "https://s7ap1.scene7.com/is/image/adityabirlafashionstage/AE_look_4_2x",
-            "mobileLImage": "https://s7ap1.scene7.com/is/image/adityabirlafashionstage/AE_look_4_2x",
-            "altLText": "",
-            "title": null,
-            "tagCarousel": "mfl-superapp:aeo/lookbook/hcarousel1"
-        }
-    },
-    {
-        "swiper": {
-            "slider": [
-                {
-                    "tempTagCarousel": "mfl-superapp:aeo/lookbook/hcarousel2",
-                    "desktopLImage": "https://s7ap1.scene7.com/is/image/adityabirlafashionstage/vh_look-4_2x",
-                    "appLImage": "https://s7ap1.scene7.com/is/image/adityabirlafashionstage/vh_look-4_2x",
-                    "mobileLImage": "https://s7ap1.scene7.com/is/image/adityabirlafashionstage/vh_look-4_2x",
-                    "altLText": "homepage look4",
-                    "tags": "mfl-superapp:aeo/lookbook/homepage",
-                    "tagCarousel": "mfl-superapp:aeo/lookbook/hcarousel2"
-                },
-                {
-                    "tempTagCarousel": "mfl-superapp:aeo/lookbook/hcarousel2",
-                    "desktopLImage": "https://s7ap1.scene7.com/is/image/adityabirlafashionstage/VH_C_D9_Flex_Big_01",
-                    "appLImage": "https://s7ap1.scene7.com/is/image/adityabirlafashionstage/VH_C_D9_Flex_Big_01",
-                    "mobileLImage": "https://s7ap1.scene7.com/is/image/adityabirlafashionstage/VH_C_D9_Flex_Big_01",
-                    "altLText": "",
-                    "tags": "mfl-superapp:aeo/lookbook/homepage",
-                    "tagCarousel": "mfl-superapp:aeo/lookbook/hcarousel2"
-                },
-                {
-                    "tempTagCarousel": "mfl-superapp:aeo/lookbook/hcarousel2",
-                    "desktopLImage": "https://s7ap1.scene7.com/is/image/adityabirlafashionstage/VH_C_D9_Flex_Big_01",
-                    "appLImage": "https://s7ap1.scene7.com/is/image/adityabirlafashionstage/VH_C_D9_Flex_Big_01",
-                    "mobileLImage": "https://s7ap1.scene7.com/is/image/adityabirlafashionstage/VH_C_D9_Flex_Big_01",
-                    "altLText": "",
-                    "tags": "mfl-superapp:aeo/lookbook/homepage",
-                    "tagCarousel": "mfl-superapp:aeo/lookbook/hcarousel2"
-                },
-                {
-                    "tempTagCarousel": "mfl-superapp:aeo/lookbook/hcarousel2",
-                    "desktopLImage": "https://s7ap1.scene7.com/is/image/adityabirlafashionstage/VH_C_D9_Flex_Big_01",
-                    "appLImage": "https://s7ap1.scene7.com/is/image/adityabirlafashionstage/VH_C_D9_Flex_Big_01",
-                    "mobileLImage": "https://s7ap1.scene7.com/is/image/adityabirlafashionstage/VH_C_D9_Flex_Big_01",
-                    "altLText": "",
-                    "tags": "mfl-superapp:aeo/lookbook/homepage",
-                    "tagCarousel": "mfl-superapp:aeo/lookbook/hcarousel2"
-                }
-            ],
-            "desktopLImage": "https://s7ap1.scene7.com/is/image/adityabirlafashionstage/AE_look_2_2x",
-            "appLImage": "https://s7ap1.scene7.com/is/image/adityabirlafashionstage/AE_look_4_2x",
-            "mobileLImage": "https://s7ap1.scene7.com/is/image/adityabirlafashionstage/AE_look_4_2x",
-            "altLText": "",
-            "title": null,
-            "tagCarousel": "mfl-superapp:aeo/lookbook/hcarousel2"
-        }
-    },
-    {
-        "swiper": {
-            "slider": [
-                {
-                    "tempTagCarousel": "mfl-superapp:aeo/lookbook/hcarousel3",
-                    "desktopLImage": "https://s7ap1.scene7.com/is/image/adityabirlafashionstage/VH_C_D9_Flex_Big_01",
-                    "appLImage": "https://s7ap1.scene7.com/is/image/adityabirlafashionstage/VH_C_D9_Flex_Big_01",
-                    "mobileLImage": "https://s7ap1.scene7.com/is/image/adityabirlafashionstage/VH_C_D9_Flex_Big_01",
-                    "altLText": "",
-                    "tags": "mfl-superapp:aeo/lookbook/homepage",
-                    "tagCarousel": "mfl-superapp:aeo/lookbook/hcarousel3"
-                }
-            ],
-            "desktopLImage": "https://s7ap1.scene7.com/is/image/adityabirlafashionstage/AE_look_2_2x",
-            "appLImage": "https://s7ap1.scene7.com/is/image/adityabirlafashionstage/AE_look_4_2x",
-            "mobileLImage": "https://s7ap1.scene7.com/is/image/adityabirlafashionstage/AE_look_4_2x",
-            "altLText": "",
-            "title": null,
-            "tagCarousel": "mfl-superapp:aeo/lookbook/hcarousel3"
-        }
-    }
-]
+        </div>
+    </div>
+    {!isCarouselTypeThumbnail ? <a href={targetLink}> <Button color={PRIMARY_BLACK} variant="contained" className={styles.shopALLLink}>{ctaLabel}</Button></a> : ""}
+</div>

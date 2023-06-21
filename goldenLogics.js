@@ -53,6 +53,12 @@ let buttonResultData = [];
     }
 });
 
+Object.entries(data)
+    .sort((a, b) => a[1].order - b[1].order)
+    .map((data) => {
+        console.log(data[0]);
+    });
+
 // -------------------------------------------------------EFICIENT CONDITIONAL STATEMENT-----------------------------------
 // "Reference"
 // https://www.digitalocean.com/community/posts/5-tips-to-write-better-conditionals-in-javascript
@@ -116,15 +122,11 @@ test(null); //  error: No fruits
 test("apple"); // print: red
 test("apple", 20); // print: red, big quantity
 
-
-function test({ one, color } = {}, { data, two } ={}) {
+function test({ one, color } = {}, { data, two } = {}) {
     console.log(data);
 }
 
 //test results
 test(undefined); // unknown
 test({ name: "red" }); // unknown
-test({one: "kumae"},{ two: "apple", color: "red", data :"kmkknknk" }); // apple
-
-
-
+test({ one: "kumae" }, { two: "apple", color: "red", data: "kmkknknk" }); // apple
