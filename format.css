@@ -1,0 +1,39 @@
+.card-size-1 {
+  width: 20px;
+  height: auto;
+  margin-top: 8px;
+  background-color: red;
+  text-align: center;
+}
+
+.card-size-2 {
+  width: 40px;
+  height: auto;
+  margin-top: 16px;
+  background-color: red;
+  text-align: center;
+}
+
+.card-size-3 {
+  width: 60px;
+  height: auto;
+  margin-top: 24px;
+  background-color: red;
+  text-align: center;
+}
+
+.card-size-4 {
+  width: 80px;
+  height: auto;
+  margin-top: 32px;
+  background-color: red;
+  text-align: center;
+}
+
+.card-size-5 {
+  width: 100px;
+  height: auto;
+  margin-top: 40px;
+  background-color: red;
+  text-align: center;
+}/*# sourceMappingURL=format.css.map */

@@ -1,3 +1,19 @@
+const componentAemMapping = (response) => {
+    let mappedData = {};
+    const aemContainer =
+        response[":items"] && response[":items"]["root"][":items"]["container"];
+    if (aemContainer) {
+        aemContainer[":itemsOrder"].map((key) => {
+            if (
+                key in aemContainer[":items"] &&
+                aemContainer[":items"][key].hasOwnProperty(":type")
+            ) {
+                mappedData[key] = aemContainer[":items"][key];
+            }
+        });
+    }
+    return mappedData;
+};
 let value = algonomydata.map((_data, index) => {
     let buttonResultData = [];
     if (_data.ctaLabelOne != "" || _data.targetLinkOne != "") {

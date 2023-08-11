@@ -1,61 +1,122 @@
-<div className={`${styles.categoryCollectionContainer}  top-bottom-spacing ${isCarouselTypeThumbnail ? styles.categoryCollectionThumbnail : ''}`}>
-    <div className={styles.categoryCollectionsHeader}>
-        <Typography variant="h4" className={styles.headerText}>{title}</Typography>
-        <Typography variant="p" className={styles.headerDesc}>{contentText}</Typography>
-    </div>
-    <div className={styles.categoryCollectionContentBlk}>
-        {isCarouselTypeThumbnail ? <div className={styles.collectionThumbnailBlk}>
-            <a href="">
-                <ImageLoader
-                    src={props.isMobile ? mobileLImage : desktopLImage}
-                    layout="responsive"
-                    {...thumbnailImgDimension}
-                    alt={altLText}
-                    title={altLText}
-                />
-                <div className={styles.thumbnailTitleBlock}>
-                    <Typography variant="p" className={styles.thumbnailTitle}>{titleThumbnail}</Typography>
-                    <Button variant="filled" className={styles.ctaBTNthmbnail} >{ctaLabelThum}</Button>
-                </div>
-            </a>
-        </div>
-            : ''
-        }
-        <div className={`${styles.categoryCollectionsSliderBlk}`}>
-            <Swiper {...swiperProps} className={`exploreCollectionSlide`}>
-                {items.map((itemsData, index) => {
-                    return (
-                        <>
-                            <SwiperSlide>
-                                {blurLastImage && <div className={`${styles.blurImage} blurImg`}></div>}
-                                <a href={itemsData.targetLink} title={itemsData.altLText}>
-                                    <div className={`${styles.card_container}`}>
-                                        <ImageLoader
-                                            src={props.isMobile ? itemsData.mobileImage : itemsData.desktopImage}
-                                            layout="responsive"
-                                            {...ImageDimensions}
-                                            alt={itemsData.altLText}
-                                            title={itemsData.altLText}
-                                        />
-                                        {console.log(ImageDimensions, 'ImageDimensions')}
-                                        <div className={styles.card_TextBlk}>
-                                            <Typography className={styles.card_categoryName}>
-                                                {itemsData.title}
-                                            </Typography>
-                                            <Typography className={styles.card_categoryDesc}>
-                                                {itemsData.contentText}
-                                            </Typography>
-                                        </div>
-                                    </div>
-                                </a>
-                            </SwiperSlide>
-                        </>
-                    )
-                }
-                )}
-            </Swiper>
-
-        </div>
-    </div>
-    {!isCarouselTypeThumbnail ? <a href={targetLink}> <Button color={PRIMARY_BLACK} variant="contained" className={styles.shopALLLink}>{ctaLabel}</Button></a> : ""}
-</div>
+let data = {
+    plpFilters: {
+        displayFilters: {
+            All_Discount: [Object],
+            Gender: [Object],
+            TrouserFront: [Object],
+            Discount: [Object],
+            Category: [Object],
+            Subbrand: [Object],
+            Occasion: [Object],
+            Sizes: [Object],
+            Price: [Object],
+            Color: [Object],
+            Fit: [Object],
+            Sleeves: [Object],
+            Pattern: [Object],
+            Neck: [Object],
+            Collar: [Object],
+            Accessories: [Object],
+            FashionAccessories: [Object],
+            Cuffs: [Object],
+            FrontOpening: [Object],
+            SuitFront: [Object],
+            Wash: [Object],
+            Hood: [Object],
+            FabricType: [Object],
+            BagType: [Object],
+            CategoryID: [Object],
+            InnerWear: [Object],
+            ShoeType: [Object],
+            SariType: [Object],
+            Fastening: [Object],
+            UpperMaterial: [Object],
+            Shape: [Object],
+            WaistRise: [Object],
+            Promotion: [Object],
+            Season: [Object],
+            ActiveWearType: [Object],
+            ProductMaterial: [Object],
+            ThreadCount: [Object],
+            ClosureType: [Object],
+            Reusable: [Object],
+            Brand: [Object],
+            SoleMaterial: [Object],
+            ProductType: [Object],
+            Length: [Object],
+            Ply: [Object],
+            WashCare: [Object],
+            Style: [Object],
+            SuitType: [Object],
+            Material: [Object],
+            Collection: [Object],
+            BraType: [Object],
+            Wired: [Object],
+            Padded: [Object],
+            Range: [Object]
+        },
+        algonomyFacets: 'facet=Gender&facet=TrouserFront&facet=DiscountRange&facet=DefaultCategoryName&facet=Feature_Subbrand&facet=Feature_Occasion&facet=SizeAvailable&facet=product_effectiveprice_cents&facet=ColorHex&facet=Feature_Fit&facet=Feature_Sleeves&facet=Feature_Pattern&facet=Feature_Neck&facet=Feature_Collar&facet=Accessories&facet=Feature_FashionAccessories&facet=Cuffs&facet=FrontOpening&facet=SuitFront&facet=Feature_WashInstructions&facet=Feature_Hood&facet=Feature_FabricType&facet=BagType&facet=CategoryID&facet=InnerWear&facet=ShoeType&facet=Feature_SariType&facet=Feature_Fastening&facet=Feature_UpperMaterial&facet=Feature_Shape&facet=Feature_WaistRise&facet=Feature_Promotion&facet=Feature_Season&facet=Feature_ActiveWearType&facet=Feature_ProductMaterial&facet=ColorHex&facet=Feature_ThreadCount&facet=Feature_ClosureType&facet=Feature_Reusable&facet=Feature_Brand&facet=Feature_SoleMaterial&facet=Feature_ProductType&facet=Feature_Length&facet=Feature_Ply&facet=Feature_WashCare&facet=Feature_TrouserFront&facet=Feature_Accessories&facet=Feature_Cuffs&facet=Feature_SuitFront&facet=Feature_FrontOpening&facet=Feature_Wash&facet=Feature_ShoeType&facet=Feature_Style&facet=Feature_SuitType&facet=Feature_BagType&facet=Feature_Material&facet=Feature_Collection&facet=Feature_BraType&facet=Feature_Wired&facet=Feature_Padded&facet=Feature_Range'
+    },
+    productColors: {
+        '#72F0EF': { name: 'Aqua', hex_code: '#72F0EF' },
+        '#DFBF8E': { name: 'Beige', hex_code: '#DFBF8E' },
+        '#A9004B': { name: 'Berry', hex_code: '#A9004B' },
+        '#000000': { name: 'Black', hex_code: '#000000' },
+        '#290292': { name: 'Blue', hex_code: '#290292' },
+        '#6A3E2F': { name: 'Brown', hex_code: '#6A3E2F' },
+        '#800020': { name: 'Burgundy', hex_code: '#800020' },
+        '#514649': { name: 'Charcoal', hex_code: '#514649' },
+        '#32170E': { name: 'Chocolate', hex_code: '#32170E' },
+        '#f4fafc': { name: 'clear', hex_code: '#f4fafc' },
+        '#965419': { name: 'Copper', hex_code: '#965419' },
+        '#FF7640': { name: 'Coral', hex_code: '#FF7640' },
+        '#FF4040': { name: 'Coral', hex_code: '#FF4040' },
+        '#FFFED7': { name: 'Cream', hex_code: '#FFFED7' },
+        '#1E3D1B': { name: 'Dark Green', hex_code: '#1E3D1B' },
+        '#5F4730': { name: 'Dark Khaki', hex_code: '#5F4730' },
+        '#3F3B25': { name: 'Dark Olive', hex_code: '#3F3B25' },
+        '#2D004A': { name: 'Dark Purple', hex_code: '#2D004A' },
+        '#CFA127': { name: 'Gold', hex_code: '#CFA127' },
+        '#398C40': { name: 'Green', hex_code: '#398C40' },
+        '#7E7172': { name: 'Grey', hex_code: '#7E7172' },
+        '#540087': { name: 'Indigo', hex_code: '#540087' },
+        '#806333': { name: 'Khaki', hex_code: '#806333' },
+        '#88A6FF': { name: 'Light Blue', hex_code: '#88A6FF' },
+        '#A6FF6B': { name: 'Light Green', hex_code: '#A6FF6B' },
+        '#B8B1B1': { name: 'Light Grey', hex_code: '#B8B1B1' },
+        '#B4A258': { name: 'Light Khaki', hex_code: '#B4A258' },
+        '#B3B966': { name: 'Light Olive', hex_code: '#B3B966' },
+        '#FFFD95': { name: 'Light Yellow', hex_code: '#FFFD95' },
+        '#D8BBFF': { name: 'Lilac', hex_code: '#D8BBFF' },
+        '#9E0C64': { name: 'Magenta', hex_code: '#9E0C64' },
+        '#5F081C': { name: 'Maroon', hex_code: '#5F081C' },
+        '#E289D7': { name: 'Mauve', hex_code: '#E289D7' },
+        '#290095': { name: 'Medium Blue', hex_code: '#290095' },
+        '#7E7272': { name: 'Medium Grey', hex_code: '#7E7272' },
+        '#5F5F5F': { name: 'Multi-coloured', hex_code: '#5F5F5F' },
+        '#F4A800': { name: 'Mustard', hex_code: '#F4A800' },
+        '#11113C': { name: 'Navy', hex_code: '#11113C' },
+        '#F5D2AE': { name: 'Nude', hex_code: '#F5D2AE' },
+        '#FEFAEA': { name: 'Off White', hex_code: '#FEFAEA' },
+        '#6B6B3F': { name: 'Olive', hex_code: '#6B6B3F' },
+        '#FF601C': { name: 'Orange', hex_code: '#FF601C' },
+        '#FFD8BB': { name: 'Peach', hex_code: '#FFD8BB' },
+        '#F4749A': { name: 'Pink', hex_code: '#F4749A' },
+        '#66419E': { name: 'Purple', hex_code: '#66419E' },
+        '#B82729': { name: 'Red', hex_code: '#B82729' },
+        '#b76e79': { name: 'Rose Gold', hex_code: '#b76e79' },
+        '#A55532': { name: 'Rust', hex_code: '#A55532' },
+        '#C5C6C8': { name: 'Silver', hex_code: '#C5C6C8' },
+        '#00CEFF': { name: 'Sky Blue', hex_code: '#00CEFF' },
+        '#989898': { name: 'Steel', hex_code: '#989898' },
+        '#AE6838': { name: 'Tan', hex_code: '#AE6838' },
+        '#004340': { name: 'Teal', hex_code: '#004340' },
+        '#FFFFFFAB': { name: 'Transparent', hex_code: '#FFFFFFAB' },
+        '#FFFFFF00': { name: 'Transparent', hex_code: '#FFFFFF00' },
+        '#149AA9': { name: 'Turquoise', hex_code: '#149AA9' },
+        '#FFFFFF': { name: 'White', hex_code: '#FFFFFF' },
+        '#4F0037': { name: 'Wine', hex_code: '#4F0037' },
+        '#FFE92B': { name: 'Yellow', hex_code: '#FFE92B' },
+        '#BF7300': { name: 'Yellow Ochre', hex_code: '#BF7300' }
+    }
+}
