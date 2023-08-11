@@ -1,0 +1,370 @@
+@import "../../base/color";
+@import "../../base/fonts";
+@import "../../base/mixin";
+
+.blogCardContainer {
+  margin-right: 19px;
+  @include for-mobile {
+    margin-right: 9px;
+  }
+  .imageContainer {
+    line-height: 0px;
+    cursor: pointer;
+    .borderBottom {
+      display: none;
+    }
+    .playIcon {
+      display: none;
+    }
+  }
+  .blogCardInfo {
+    max-width: 420px;
+    > span {
+      display: none !important;
+    }
+    .blogCardHeading {
+      @include fonts(16px, $kaisei, normal, 1.75, normal);
+      margin-top: 12px;
+      font-stretch: normal;
+      font-style: normal;
+      color: $black;
+      @include for-mobile {
+        @include fonts(14px, $kaisei, normal, 1.75, normal);
+        margin-top: 11px;
+      }
+    }
+    .blogCardDescription {
+      @include fonts(14px, $opensans, normal, 1.86, normal);
+      margin-top: 4px;
+      font-stretch: normal;
+      font-style: normal;
+      color: $charcoal;
+      @include for-mobile {
+        @include fonts(12px, $opensans, normal, 1.83, normal);
+        margin-top: 0px;
+      }
+    }
+  }
+  &.curatedCollectionCard {
+    margin-right: 2px;
+    padding-bottom: 50px;
+    .blogCardHeading {
+      @include fonts(28px, $oswald, normal, 1.57, normal);
+      text-align: center;
+      color: $black;
+      margin-top: 30px;
+    }
+    .blogCardDescription {
+      @include fonts(16px, $inter, normal, 1.63, normal);
+      margin-top: 10px;
+      text-align: center;
+      color: $black;
+      max-width: 305px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+    .ctaButton {
+      margin-top: 20px;
+      text-align: center;
+      a {
+        @include fonts(16px, $oswald, 500, 1.31, 0.57px);
+        border-bottom: 1px solid $black;
+        color: $black;
+      }
+    }
+    @include for-mobile {
+      padding-bottom: 30px;
+      .blogCardHeading {
+        margin-top: 20px;
+        @include fonts(21px, $oswald, normal, normal, normal);
+      }
+      .blogCardDescription {
+        @include fonts(14px, $inter, normal, 1.71, normal);
+      }
+    }
+  }
+  &.microsite {
+    .blogCardInfo {
+      .blogCardHeading {
+        font-weight: bold;
+        margin-top: 20px;
+      }
+    }
+   }
+   &.VH.blogCardContainer {
+    .blogCardHeading {
+      font-family: $oswald;
+      font-weight: normal;
+    }
+    .blogCardDescription {
+      font-family: $inter;
+    }
+   }
+   &.AS.blogCardContainer {
+    .blogCardHeading {
+      font-family: $gotham;
+      color: #282828;
+      font-weight: 500;
+    }
+    .blogCardDescription {
+      font-family: $gothambook;
+      color: #282828;
+    }
+   }
+   &.PE.blogCardContainer {
+    .blogCardHeading {
+      font-family: $cabin;
+      font-weight: 600;
+    }
+    .blogCardDescription {
+      font-family: $lato;
+    }
+   }
+  }
+@include for-mobile {
+  .blogImage {
+    .blogCardHeading {
+      @include fonts(14px);
+      margin-top: 11px;
+    }
+    .blogCardDescription {
+      @include fonts(12px);
+    }
+    .ctaButton {
+      margin-top: 10px;
+      a {
+        @include fonts(14px, $oswald, 500, 1.5, 0.5px);
+      }
+    }
+  }
+}
+.RBK {
+  .blogCardInfo {
+    width: 100%;
+    max-width: 100%;
+    .blogCardHeading {
+      font-weight: 800;
+      font-size: 22px;
+      font-family: $neueplakextendedblack;
+      color: $vectorblue;
+      line-height: 32px;
+      @include for-mobile {
+        font-size: 16px;
+        line-height: 18px;
+      }
+    }
+    .blogCardDescription {
+      font-weight: 400;
+      font-size: 15px;
+      font-family: $neueplakregular;
+      color: $vectorblue;
+      @include for-mobile {
+        font-size: 14px;
+        line-height: 18px;
+        margin-top: 10px;
+        margin-bottom: 23px;
+      }
+    }
+  }
+  .ctaButton {
+    font-weight: 800;
+    font-size: 16px;
+    font-family: $neueplakextendedblack;
+    color: $vectorblue;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-top: 23px;
+    padding-bottom: 2px;
+    a {
+      text-decoration-line: underline;
+    }
+    @include for-mobile {
+      font-size: 12px;
+      line-height: 20px;
+    }
+  }
+}
+
+.youtubeVideos,
+.peterEnglandBlog {
+  margin-right: 20px;
+  @include for-mobile {
+    margin-right: 11px;
+  }
+  .imageContainer {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    line-height: 0;
+    cursor: pointer;
+    .borderBottom {
+      height: 5px;
+      background: linear-gradient(to left, $fireenginered 50%, $darkspringgreen 50%);
+      display: block;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+    .playIcon {
+      position: absolute;
+      display: block;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  .blogCardInfo {
+    > span {
+      display: block !important;
+      left: -45%;
+    }
+    .blogCardHeading {
+      @include fonts(21px, $cabin, 700, 1.43, normal);
+      color: $black;
+      @include for-mobile {
+        @include fonts(16px, $cabin, 700, 1.5, normal);
+      }
+    }
+    .readTime {
+      margin-top: 10px;
+      @include fonts(12px, $cabin, 700, 2, normal);
+      color: $cloudgrey;
+    }
+  }
+}
+
+.youtubeVideos {
+  margin-left: 5px;
+  margin-right: 15px;
+  @include for-mobile() {
+    margin-right: 5px;
+  }
+}
+
+.peterEnglandBlog {
+  margin-left: 20px;
+  margin-right: 0px;
+  @include for-mobile {
+    margin-left: 10px;
+  }
+  .imageContainer {
+    .playIcon {
+      display: none;
+    }
+  }
+  .blogCardInfo {
+    display: flex;
+    flex-direction: column-reverse;
+    .blogCardHeading {
+      margin-top: 0px;
+    }
+    .blogCardDescription {
+      @include fonts(12px, $cabin, 500, 2, normal);
+      color: $cloudgrey;
+      font-stretch: condensed;
+    }
+  }
+}
+
+.youtubeModal {
+  background-color: $white;
+  border-radius: 10px;
+  width: calc(80vw + 20px);
+  max-width: 873px;
+  height: calc(45vw + 50px);
+  max-height: 530px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  &:focus-visible {
+    outline: none;
+  }
+  .headerIcon {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    cursor: pointer;
+  }
+  .iframeContainer {
+    margin-top: 45px;
+    width: 80vw;
+    max-width: 853px;
+    height: 45vw;
+    max-height: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @include for-mobile {
+    width: calc(100vw - 20px);
+    height: calc(56vw + 45px);
+    .iframeContainer {
+      width: calc(100vw - 30px);
+      height: calc(56vw - 5px);
+    }
+  }
+}
+.peBlog {
+  .blogCardHeading {
+    font-family: $lato !important;
+    font-weight: 600 !important;
+  }
+  .blogCardDescription {
+    font-family: $cabin !important;
+  }
+}
+.AEO {
+  .blogCardInfo {
+    .dateDifference {
+      font-family: $avenirnext;
+      font-size: 12px;
+      text-transform: uppercase;
+      color: $browngrey;
+      margin-top: 15px;
+      line-height: 19px;
+      @include for-mobile {
+        font-size: 12px;
+      }
+    }
+    .blogCardHeading {
+      font-family: $avenirnextdemi;
+      font-size: 21px;
+      line-height: 28px;
+      text-transform: capitalize;
+      color: $neutralblack;
+      @include for-mobile {
+        font-size: 16px;
+        line-height: 23px;
+      }
+    }
+    .blogCardDescription {
+      font-family: $avenirnext;
+      font-size: 16px;
+      line-height: 24px;
+      color: $jet;
+      @include for-mobile {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+    .ctaButton{
+      margin-top: 8px;
+      a {
+        font-family: $avenirnextmedium;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        color: $navyblue;
+      }
+      a:after {
+        content: '';
+        width: 75px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        border-bottom: 1px solid $navyblue;
+      }
+    }
+  }
+}
